@@ -1,0 +1,18 @@
+.lineChart {
+  float: left;
+}
+
+.lineChart .axisLeft line {
+  stroke-width: 0.5;
+  stroke: black;
+}
+.lineChart .axisLeft path {
+  display: none;
+}
+.lineChart .axisBottom line,
+.lineChart .axisBottom path {
+  display: none;
+}
+.lineChart text {
+  fill: black;
+}
