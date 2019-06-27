@@ -58,4 +58,4 @@ const XYAxisLineChart = ({ scales, margins, svgDimensions }) => {
   );
 };
 
-export default XYAxisLineChart
+export default XYAxisLineChart;

@@ -59,7 +59,7 @@ export default class Tooltip extends React.Component {
               "," +
               yScale(d.valPercentage) +
               ")"
-          );
+          ).attr("opacity", 1);
           d3.select(".lineChartTooltip .tooltipHoverLineY").attr(
             "y2",
             svgDimensions.height - yScale(d.valPercentage) - margins.bottom
@@ -75,6 +75,7 @@ export default class Tooltip extends React.Component {
         }}
         onMouseOut={() => {
           //ToDO
+          d3.select(".lineChartTooltip").attr("opacity", 0);
         }}
       />
     );
