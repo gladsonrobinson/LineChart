@@ -4,7 +4,7 @@
 
 .lineChart .axisLeft line {
   stroke-width: 0.5;
-  stroke: black;
+  stroke: #6b7078;
 }
 .lineChart .axisLeft path {
   display: none;
