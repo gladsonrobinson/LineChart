@@ -10,6 +10,7 @@ export default class SummeryLine extends React.Component {
   componentDidMount() {
     const { minWidth } = this.props.svgDimensions;
     const { xScale, yScale } = this.props.scales;
+    const { right } = this.props.margins;
     this.xAxis = d3.axisBottom(xScale);
     this.line = d3
       .line()
@@ -18,7 +19,7 @@ export default class SummeryLine extends React.Component {
 
     const brush = d3
       .brushX()
-      .extent([[100, 70], [minWidth, minWidth]])
+      .extent([[100, 70], [minWidth - right, minWidth - right]])
       .on("brush end", this.brushed);
 
     d3.select(".brush")
