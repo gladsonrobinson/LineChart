@@ -33,7 +33,8 @@ export default class Tooltip extends React.Component {
           stroke="#111111"
           strokeWidth="1px"
         />
-        <circle r="3px" stroke="#111111" strokeWidth="3px" fill="#333333" />
+        <circle r="2px" stroke="#111111" strokeWidth="2px" fill="#333333" />
+
         <text x="20" y="-20" fontSize="12px" style={toolTipBox}>
           NAME: {data[1].user}
         </text>
@@ -52,14 +53,16 @@ export default class Tooltip extends React.Component {
           d0 = i === xAxisMinVal ? data[i] : data[i - 1];
           d1 = data[i];
           d = mouseValue - d0.category < d1.category - mouseValue ? d0 : d1;
-          d3.select(".lineChartTooltip").attr(
-            "transform",
-            "translate(" +
-              xScale(d.category) +
-              "," +
-              yScale(d.valPercentage) +
-              ")"
-          ).attr("opacity", 1);
+          d3.select(".lineChartTooltip")
+            .attr(
+              "transform",
+              "translate(" +
+                xScale(d.category) +
+                "," +
+                yScale(d.valPercentage) +
+                ")"
+            )
+            .attr("opacity", 1);
           d3.select(".lineChartTooltip .tooltipHoverLineY").attr(
             "y2",
             svgDimensions.height - yScale(d.valPercentage) - margins.bottom
@@ -74,8 +77,12 @@ export default class Tooltip extends React.Component {
           d3.select(".lineChartTooltip text").text(`NAME: ${d.user}`);
         }}
         onMouseOut={() => {
-          //ToDO
-          d3.select(".lineChartTooltip").attr("opacity", 0);
+          const toolTipClass = d3.select(".lineChartTooltip");
+          toolTipClass.transition();
+          toolTipClass
+            .transition()
+            .delay(1000)
+            .attr("opacity", 0);
         }}
       />
     );

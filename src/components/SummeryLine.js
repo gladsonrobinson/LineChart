@@ -20,7 +20,7 @@ export default class SummeryLine extends React.Component {
     const brush = d3
       .brushX()
       .extent([[100, 70], [minWidth - right, minWidth - right]])
-      .on("brush end", this.brushed);
+      .on("brush", this.brushed);
 
     d3.select(".brush")
       .call(brush)
