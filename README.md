@@ -26,4 +26,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 [Screenshot](https://imgur.com/xiMvlN9)
 
 
-[Demo](https://github.com/gladsonrobinson)
+[Demo](https://codesandbox.io/s/github/gladsonrobinson/LineChart)
